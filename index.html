@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Management Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📄 PDF Management Tool</h1>
+            <p class="subtitle">Manage your PDF files with ease - All processing happens locally in your browser</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-button active" data-tab="merge">Merge PDFs</button>
+            <button class="tab-button" data-tab="split">Split/Extract</button>
+            <button class="tab-button" data-tab="rotate">Rotate Pages</button>
+            <button class="tab-button" data-tab="metadata">View Metadata</button>
+        </div>
+
+        <!-- Merge PDFs Tab -->
+        <div id="merge" class="tab-content active">
+            <h2>Merge PDFs</h2>
+            <p>Combine multiple PDF files into a single document</p>
+            <div class="upload-area">
+                <input type="file" id="merge-files" accept=".pdf" multiple>
+                <label for="merge-files" class="file-label">
+                    <span>📁 Choose PDF Files</span>
+                </label>
+            </div>
+            <div id="merge-file-list" class="file-list"></div>
+            <button id="merge-btn" class="action-btn" disabled>Merge PDFs</button>
+            <div id="merge-status" class="status"></div>
+        </div>
+
+        <!-- Split/Extract Tab -->
+        <div id="split" class="tab-content">
+            <h2>Split/Extract Pages</h2>
+            <p>Extract specific pages from a PDF file</p>
+            <div class="upload-area">
+                <input type="file" id="split-file" accept=".pdf">
+                <label for="split-file" class="file-label">
+                    <span>📁 Choose PDF File</span>
+                </label>
+            </div>
+            <div id="split-info" class="file-info"></div>
+            <div class="input-group">
+                <label for="page-range">Pages to extract (e.g., 1-3, 5, 7-9):</label>
+                <input type="text" id="page-range" placeholder="e.g., 1-3, 5, 7-9">
+            </div>
+            <button id="split-btn" class="action-btn" disabled>Extract Pages</button>
+            <div id="split-status" class="status"></div>
+        </div>
+
+        <!-- Rotate Pages Tab -->
+        <div id="rotate" class="tab-content">
+            <h2>Rotate Pages</h2>
+            <p>Rotate pages in your PDF document</p>
+            <div class="upload-area">
+                <input type="file" id="rotate-file" accept=".pdf">
+                <label for="rotate-file" class="file-label">
+                    <span>📁 Choose PDF File</span>
+                </label>
+            </div>
+            <div id="rotate-info" class="file-info"></div>
+            <div class="input-group">
+                <label for="rotate-pages">Pages to rotate (e.g., 1-3, 5 or 'all'):</label>
+                <input type="text" id="rotate-pages" placeholder="e.g., 1-3, 5 or 'all'">
+            </div>
+            <div class="input-group">
+                <label for="rotate-degrees">Rotation angle:</label>
+                <select id="rotate-degrees">
+                    <option value="90">90° Clockwise</option>
+                    <option value="180">180°</option>
+                    <option value="270">270° Clockwise (90° Counter-clockwise)</option>
+                </select>
+            </div>
+            <button id="rotate-btn" class="action-btn" disabled>Rotate Pages</button>
+            <div id="rotate-status" class="status"></div>
+        </div>
+
+        <!-- View Metadata Tab -->
+        <div id="metadata" class="tab-content">
+            <h2>View Metadata</h2>
+            <p>Extract and view PDF file metadata</p>
+            <div class="upload-area">
+                <input type="file" id="metadata-file" accept=".pdf">
+                <label for="metadata-file" class="file-label">
+                    <span>📁 Choose PDF File</span>
+                </label>
+            </div>
+            <div id="metadata-info" class="metadata-display"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>🔒 Your files are processed entirely in your browser. No data is uploaded to any server.</p>
+    </footer>
+
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
