@@ -118,7 +118,34 @@ input[type="file"] {
     align-items: center;
 }
 
-.file-item button {
+.file-item-buttons {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.file-item .reorder-btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background 0.3s ease;
+}
+
+.file-item .reorder-btn:hover:not(:disabled) {
+    background: #5568d3;
+}
+
+.file-item .reorder-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.file-item .remove-btn {
     background: #ff4444;
     color: white;
     border: none;
@@ -127,7 +154,7 @@ input[type="file"] {
     cursor: pointer;
 }
 
-.file-item button:hover {
+.file-item .remove-btn:hover {
     background: #cc0000;
 }
 

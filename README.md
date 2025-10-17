@@ -5,7 +5,7 @@ A client-side PDF management tool that lets you work with PDF files entirely in 
 ## Features
 
 ### 📑 Merge PDFs
-Combine multiple PDF files into a single document. Upload two or more PDFs and merge them in the order you select.
+Combine multiple PDF files into a single document. Upload two or more PDFs and merge them in the order you select. Use the up and down arrow buttons to reorder files before merging.
 
 ### ✂️ Split/Extract Pages
 Extract specific pages from a PDF file. Use page ranges like:

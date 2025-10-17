@@ -16,12 +16,15 @@ This guide will help you test all features of the PDF Management Tool.
 2. Make sure you're on the "Merge PDFs" tab (default)
 3. Click "Choose PDF Files" and select 2 or more PDF files
 4. You should see the files listed with their names
-5. You can remove files by clicking the "Remove" button next to any file
-6. Click "Merge PDFs" button
-7. A new PDF named `merged.pdf` should download automatically
-8. Open the merged PDF to verify all pages are included in order
+5. Use the ▲ (up) and ▼ (down) arrow buttons to reorder files as needed
+   - The up arrow button is disabled for the first file
+   - The down arrow button is disabled for the last file
+6. You can remove files by clicking the "Remove" button next to any file
+7. Click "Merge PDFs" button
+8. A new PDF named `merged.pdf` should download automatically
+9. Open the merged PDF to verify all pages are included in the order you specified
 
-**Expected Result:** A single PDF containing all pages from all selected files in the order they were added.
+**Expected Result:** A single PDF containing all pages from all selected files in the order you specified using the reorder buttons.
 
 ---
 
