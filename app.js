@@ -54,7 +54,11 @@ function updateMergeFileList() {
         fileItem.className = 'file-item';
         fileItem.innerHTML = `
             <span>${index + 1}. ${file.name}</span>
-            <button onclick="removeMergeFile(${index})">Remove</button>
+            <div class="file-item-buttons">
+                <button onclick="moveMergeFileUp(${index})" ${index === 0 ? 'disabled' : ''} class="reorder-btn" title="Move up">&#9650;</button>
+                <button onclick="moveMergeFileDown(${index})" ${index === mergeFiles.length - 1 ? 'disabled' : ''} class="reorder-btn" title="Move down">&#9660;</button>
+                <button onclick="removeMergeFile(${index})" class="remove-btn">Remove</button>
+            </div>
         `;
         listDiv.appendChild(fileItem);
     });
@@ -64,6 +68,20 @@ function removeMergeFile(index) {
     mergeFiles.splice(index, 1);
     updateMergeFileList();
     document.getElementById('merge-btn').disabled = mergeFiles.length < 2;
+}
+
+function moveMergeFileUp(index) {
+    if (index > 0) {
+        [mergeFiles[index - 1], mergeFiles[index]] = [mergeFiles[index], mergeFiles[index - 1]];
+        updateMergeFileList();
+    }
+}
+
+function moveMergeFileDown(index) {
+    if (index < mergeFiles.length - 1) {
+        [mergeFiles[index], mergeFiles[index + 1]] = [mergeFiles[index + 1], mergeFiles[index]];
+        updateMergeFileList();
+    }
 }
 
 document.getElementById('merge-btn').addEventListener('click', async () => {
