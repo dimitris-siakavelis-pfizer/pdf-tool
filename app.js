@@ -55,8 +55,8 @@ function updateMergeFileList() {
         fileItem.innerHTML = `
             <span>${index + 1}. ${file.name}</span>
             <div class="file-item-buttons">
-                <button onclick="moveMergeFileUp(${index})" ${index === 0 ? 'disabled' : ''} class="reorder-btn" title="Move up">▲</button>
-                <button onclick="moveMergeFileDown(${index})" ${index === mergeFiles.length - 1 ? 'disabled' : ''} class="reorder-btn" title="Move down">▼</button>
+                <button onclick="moveMergeFileUp(${index})" ${index === 0 ? 'disabled' : ''} class="reorder-btn" title="Move up">&#9650;</button>
+                <button onclick="moveMergeFileDown(${index})" ${index === mergeFiles.length - 1 ? 'disabled' : ''} class="reorder-btn" title="Move down">&#9660;</button>
                 <button onclick="removeMergeFile(${index})" class="remove-btn">Remove</button>
             </div>
         `;
